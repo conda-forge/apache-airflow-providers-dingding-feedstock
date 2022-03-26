@@ -1,7 +1,6 @@
 {% set name = "apache-airflow-providers-dingding" %}
 {% set version = "2.0.4" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,9 +10,9 @@ source:
   sha256: 4e9a59137dc583e688c0bc1a215f71ee85c9542796b022125696cd0e60b5de60
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
@@ -35,9 +34,10 @@ test:
 
 about:
   home: https://airflow.apache.org/
-  summary: Provider for Dingding for Apache Airflow
+  summary: Provider for Apache Airflow. Implements apache-airflow-providers-dingding package
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-dingding/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
