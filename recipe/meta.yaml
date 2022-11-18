@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-dingding" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-dingding-{{ version }}.tar.gz
-  sha256: f5f9a5f4e693370cad5c10fe4e4ba49e37ee6b7cd158b81e90dc89975bc1d53e
+  sha256: a5f0c619f3a226fb033ced4f1e0dff6b73b0b4c4c25051c92e24b2b2099be2bf
 
 build:
   noarch: python
@@ -21,7 +21,8 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - apache-airflow >=2.2.0
+    - apache-airflow-providers-http
+    - apache-airflow >=2.3.0
 
 test:
   imports:
