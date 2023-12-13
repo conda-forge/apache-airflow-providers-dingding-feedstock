@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-dingding" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-dingding-{{ version }}.tar.gz
-  sha256: 15106287fe6ef272d41933e8d89f004658615914ab497f273e43efd3d14fe21e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 847545450246888e9fab1903ee6afefce52e0e0b350cc3a8b09d1e576a4613bc
 
 build:
   noarch: python
@@ -16,30 +16,27 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
     - apache-airflow-providers-http
-    - apache-airflow >=2.5.0
+    - apache-airflow >=2.6.0
 
 test:
   imports:
     - airflow.providers.dingding
-    - airflow.providers.dingding.hooks
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-dingding package
+  home: https://github.com/apache/airflow/
+  summary: Provider package apache-airflow-providers-dingding for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/dingding/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-dingding/stable/index.html
   dev_url: https://github.com/apache/airflow/
