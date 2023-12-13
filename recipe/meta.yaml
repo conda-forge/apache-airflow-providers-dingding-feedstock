@@ -26,7 +26,7 @@ requirements:
 
 test:
   imports:
-    - airflow.providerss.dingding
+    - airflow.providers.dingding
   commands:
     - pip check
   requires:
