@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_dingding-{{ version }}.tar.gz
   sha256: cb13dc6867ffb99197bce7430cc25b6c28cb10ccba1198b2e57cab1dc233e7d4
 
 build:
@@ -17,12 +17,12 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core ==3.10.0
+    - flit-core ==3.11.0
     - pip
   run:
     - python >={{ python_min }},<4.dev0
-    - apache-airflow-providers-http
     - apache-airflow >=2.9.0
+    - apache-airflow-providers-http
 
 test:
   imports:
@@ -37,7 +37,7 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-dingding for Apache Airflow
   license: Apache-2.0
-  license_file: airflow/providers/dingding/LICENSE
+  license_file: src/airflow/providers/dingding/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-dingding/stable/index.html
   dev_url: https://github.com/apache/airflow/
