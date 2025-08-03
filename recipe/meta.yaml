@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-dingding" %}
-{% set version = "3.8.1" %}
+{% set version = "3.8.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_dingding-{{ version }}.tar.gz
-  sha256: 79811e45e7ec81575c93b7aeed837dd4c0d061cc2625dd2017d09a67148f2b32
+  sha256: a2c29b33aa27e3887ec27c9957eac8779e2c47f95ed03c190cf3a005e3bf1ae8
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
-    - python >={{ python_min }},<4.dev0
+    - python >={{ python_min }}
     - apache-airflow >=2.10.0
     - apache-airflow-providers-http
 
