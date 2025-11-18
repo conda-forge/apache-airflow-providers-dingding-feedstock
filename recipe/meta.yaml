@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-dingding" %}
-{% set version = "3.8.2" %}
-{% set python_min = "3.10" %}
+{% set version = "3.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_dingding-{{ version }}.tar.gz
-  sha256: a2c29b33aa27e3887ec27c9957eac8779e2c47f95ed03c190cf3a005e3bf1ae8
+  sha256: 17a3f78c3de984f204eb5809272bfa28067fe09984a7c2ebcae5c049fa698cf4
 
 build:
   noarch: python
@@ -23,6 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - apache-airflow >=2.10.0
+    - apache-airflow-providers-common-compat >=1.8.0
     - apache-airflow-providers-http
 
 test:
@@ -38,7 +38,9 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-dingding for Apache Airflow
   license: Apache-2.0
-  license_file: src/airflow/providers/dingding/LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-dingding/stable/index.html
   dev_url: https://github.com/apache/airflow/
