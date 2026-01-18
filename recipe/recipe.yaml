@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-dingding
-  version: "3.9.1"
+  version: "3.9.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_dingding-${{ version }}.tar.gz
-  sha256: d49fab9908c1636409866996d272e1b5fe314781af4556b10f5f7ac316312768
+  sha256: 4deadc36ca019e7daec3746533cbef26940589d4cc2caf630cd828be81e66fe4
 
 build:
   noarch: python
@@ -29,7 +29,7 @@ requirements:
 tests:
   - python:
       imports:
-      - airflow.providers.dingding
+        - airflow.providers.dingding
       pip_check: true
       python_version: ${{ python_min }}.*
 
